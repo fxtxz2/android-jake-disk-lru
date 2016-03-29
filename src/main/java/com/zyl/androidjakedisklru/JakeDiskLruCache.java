@@ -36,12 +36,12 @@ public class JakeDiskLruCache {
 
     private JakeDiskLruCache(){}
     private static class JakeDiskLruCacheHolder{
-        private static JakeDiskLruCache INSTANCE = new JakeDiskLruCache();
+        private static final JakeDiskLruCache INSTANCE = new JakeDiskLruCache();
     }
 
     /**
      * 获取单例
-     * @return
+     * @return JakeDiskLruCache对象
      */
     public static JakeDiskLruCache getInstance() {
         return JakeDiskLruCacheHolder.INSTANCE;
@@ -49,7 +49,7 @@ public class JakeDiskLruCache {
 
     /**
      * 初始化
-     * @param context
+     * @param context 当前上下文
      */
     public void init(Context context){
         cacheDir = getDiskCacheDir(context.getApplicationContext(), CACHE_DIR);
@@ -65,8 +65,8 @@ public class JakeDiskLruCache {
 
     /**
      * 保存数据
-     * @param url
-     * @param value
+     * @param url 文件下载地址
+     * @param value 数据
      */
     public void put(String url, String value){
         try {
@@ -82,8 +82,8 @@ public class JakeDiskLruCache {
 
     /**
      * 获取数据
-     * @param url
-     * @return
+     * @param url 下载地址
+     * @return String数据
      */
     public String get(String url){
         try {
@@ -113,14 +113,16 @@ public class JakeDiskLruCache {
 
     /**
      * 获得缓存目录对象
-     * @return
+     * @return File文件对象
      */
     public File getCacheDir() {
         return cacheDir;
     }
     /**
      * 该方法会判断当前sd卡是否存在，然后选择缓存地址
-     *
+     * @param context 当前上下文
+     * @param uniqueName 唯一名
+     * @return File对象数据
      */
     public static File getDiskCacheDir(Context context, String uniqueName) {
         String cachePath;
@@ -138,7 +140,8 @@ public class JakeDiskLruCache {
     }
     /**
      * 获得应用version号码
-     *
+     * @param context 当前上下文
+     * @return int 版本号,获取失败则返回1;
      */
     public static int getAppVersion(Context context) {
         try {

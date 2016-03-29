@@ -40,4 +40,4 @@ JakeDiskLruCache.getInstance().clear();
 ```
 
 # Gradle引入
-`compile 'com.zyl.androidjakedisklru:androidjakedisklru:0.0.1'`
+`compile 'com.zyl.androidjakedisklru:androidjakedisklru:0.0.2'`

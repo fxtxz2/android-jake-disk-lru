@@ -1,4 +1,4 @@
-[![bintray](https://api.bintray.com/packages/zyl/maven/android-jake-disk-lru/images/download.svg)](https://bintray.com/zyl/maven/android-jake-disk-lru/_latestVersion)
+[![bintray](https://img.shields.io/bintray/v/zyl/maven/android-jake-disk-lru.svg)](https://bintray.com/zyl/maven/android-jake-disk-lru/_latestVersion)
 # android-jake-disk-lru
 [Jake的磁盘Lru缓存](https://github.com/JakeWharton/DiskLruCache)工具类,现在只支持String类型,已经实现了单列模式(内部静态实例)。
 
